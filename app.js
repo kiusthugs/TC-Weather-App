@@ -35,7 +35,7 @@ async function getWeather(locationInput) {
     try {
         if (isNaN(locationInput)) { //input is string
             //grab longitude & latitude
-            let locationResponse = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${locationInput}&appid=${API_KEY}`);
+            let locationResponse = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${locationInput}&appid=${API_KEY}`);
             let locationData = await locationResponse.json();
             let latitude = locationData[0].lat
             let longitude = locationData[0].lon
@@ -86,13 +86,11 @@ async function getWeather(locationInput) {
             cardList.push(cardObj)
             displayWeatherList(cardList)
 
-            //get forecast api when clicking specific location
-            //work on forecast styling
             //work on desktop styling
-            //figure out way to determine forecast and one day view when toggling temp and clicking the card repeatedly
+            //check if zipcode works properly
 
         } else { //is a number, zip code
-            let locationResponse = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${locationInput}&appid=${API_KEY}`);
+            let locationResponse = await fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${locationInput}&appid=${API_KEY}`);
             let locationData = await locationResponse.json();
             let latitude = locationData.lat
             let longitude = locationData.lon
@@ -224,12 +222,12 @@ celButton.addEventListener('click', () => {
 //forecast data
 
 async function forecast(locationInput, id, toggleForecast) {
-    let locationResponse = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${locationInput}&appid=${API_KEY}`);
+    let locationResponse = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${locationInput}&appid=${API_KEY}`);
     let locationData = await locationResponse.json();
     let latitude = locationData[0].lat
     let longitude = locationData[0].lon
 
-    let weatherResponse = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
+    let weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
     let weatherData = await weatherResponse.json()
 
     displayForecast(weatherData, id, toggleTemp, toggleForecast)
