@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script type="module" src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>TC Weather App</h1>
+        <p id="toggle"><span id="cel">°C</span><span id="far">°F</span></p>
+        <input type="text" id="locationInput" name="locationInput" placeholder="Search for a city" required>
+        <button id="submit">Submit</button>
+    </header>
+    <div id="cardSection">
+        <!-- <div class="card">
+            <h2>Las Vegas</h2><span class="close">x</span>
+            <p id="temperature">20°F</p>
+            <img src="Weather Images/day/cold-day.webp" alt="current weather icon" width="180px" height="180px">
+            <p id="weatherDesc">Clear Sky</p>
+            <div class="forecastButton"></div>
+        </div> -->
+        <!-- <div class="card">
+            <h2>Las Vegas</h2>
+            <div class="cardForecast">
+                <h2>Las Vegas</h2>
+                <div class="day"><p class="weekday">Sun 06</p><p class="foreTemp">20°F</p><div class="foreImg"><img src="Weather Images/day/cold-day.webp" alt="current weather image" width="50px" height="50px"></div></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+            </div>
+            <div class="forecastButton"></div>
+        </div> -->
+    </div>
+</body>
+
+</html>

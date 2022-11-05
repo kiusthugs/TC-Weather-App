@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    width: 85%;
+    margin: auto;
+    background-color: #686cd4;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+header {
+    position: relative;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+#toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+}
+
+#cel, #far {
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
+
+#far {
+    border-left: 2px solid white;
+    padding-right: 0;
+    color: #fec936;
+}
+
+#cel:hover, #far:hover {
+    color: #fec936;
+}
+
+
+input {
+    border: none;
+    border-bottom: 1px solid white;
+    width: 100%;
+    font-size: 2em;
+    background-color: #686cd4;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+input:focus{
+    outline: none;
+}
+
+#submit {
+    border: none;
+    background-color: #fec936;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
+
+#cardSection {
+    margin-top: 15px;
+}
+
+.card {
+    border-radius: 15px;
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.4em;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    background-color: white;
+    color: black;
+    margin-bottom: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: left;
+    font-size: 2em;
+}
+
+#temperature {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: gray;
+    font-size: 30px;
+    cursor: pointer;
+}  
+
+.close:hover {
+    color: red;
+}
+
+img {
+    width: 60%;
+    height: 60%;
+}
+
+.forecastButton {
+    width: 0;
+    height: 0;
+    border-bottom: 25px solid #fec936;
+    border-left: 25px solid transparent;
+    bottom: 25px;
+    right: 25px;
+    position: absolute;
+    transition: bottom .2s, right .2s, border .3s;
+    cursor: pointer;
+}
+
+.card:hover > .forecastButton {
+    bottom: 15px;
+    right: 15px;
+    border-bottom: 35px solid #fec936;
+    border-left: 35px solid transparent;
+}
+
+
+/* .forecastButton {
+    bottom: 18px;
+    right: 18px;
+} */
+
+/* Forecast Styling */
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: .5px solid black;
+}
+
+.day p, .day div {
+    width: 33.33%;
+}
+
+.foreTemp {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.cardForecast {
+    margin-bottom: 50px;
+}
+
+.weatherDesc {
+    display: flex;
+    flex-wrap: wrap;
+}
+.weatherDesc p {
+    width: 100%;
+}
+
+.forecastDesc {
+    font-size: 1.4rem;
+    text-align: center;
+}
