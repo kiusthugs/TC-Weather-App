@@ -43,12 +43,10 @@ export function displayForecast(data, id, toggleTemp, toggleForecast) {
 
         // Temperature 
         if (toggleTemp === true) {
-            console.log('temp')
             let f = Math.floor(fahrenheit(getWeather.main.temp))
             tempString = f
             spanDeg = '°F'
         } else {
-            console.log('cel')
             let c = Math.floor(celsius(getWeather.main.temp))
             tempString = c
             spanDeg = '°C'

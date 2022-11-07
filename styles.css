@@ -175,3 +175,33 @@ img {
     font-size: 1.4rem;
     text-align: center;
 }
+
+@media screen and (min-width: 1025px) {
+    #cardSection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card {
+        margin: auto 10px 25px 10px;
+        width: 30%;
+    }
+
+    .forecasting {
+        width: 50%;
+    }
+
+    #desktopInput {
+        display: flex;
+    }
+
+    #locationInput {
+        width: 50%;
+    }
+
+    #desktopInput button {
+        margin-left: 15px; 
+        width: 15%;
+    }
+}

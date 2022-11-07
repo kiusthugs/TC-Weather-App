@@ -1,11 +1,9 @@
 const cardSection = document.querySelector('#cardSection')
 
 export function displayWeatherList(data, id) {
-
     if (id) {
         let grabCard = document.querySelectorAll('.card span') 
         let parent = grabCard[Number(id)].parentElement
-        console.log(parent)
 
         parent.innerHTML = ''
 
