@@ -79,64 +79,6 @@ async function getWeather(locationInput) {
             cardList.push(cardObj)
             displayWeatherList(cardList)
 
-        //zip code creating styling bugs and cards receiving the wrong id    
-
-        // } else { //is a number, zip code
-        //     let locationResponse = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${locationInput}&appid=${API_KEY}`);
-        //     let locationData = await locationResponse.json();
-        //     let latitude = locationData.lat
-        //     let longitude = locationData.lon
-        //     console.log(locationData)
-        //     console.log(latitude)
-        //     console.log(longitude)
-
-        //     //use logitude & latitude to get weather data
-        //     let weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
-        //     let weatherData = await weatherResponse.json()
-
-        //     let fDeg = fahrenheit(weatherData.main.temp)
-        //     let cDeg = celsius(weatherData.main.temp)
-        //     console.log('Fahrenheit: ' + fDeg)
-        //     console.log('Celsius: ' + cDeg)
-
-        //     //adjust picture and weather text
-        //     let adjustedImg, descText
-
-        //     if (weatherData.weather[0].main === 'Clear') {
-        //         adjustedImg = 'Weather Images/day/clear-day.gif'
-        //         descText = `${weatherData.weather[0].description[0].toUpperCase() + weatherData.weather[0].description.slice(1).toLowerCase()}`
-        //     } else if (weatherData.weather[0].main === 'Clouds') {
-        //         adjustedImg = 'Weather Images/day/cloudy-day.gif'
-        //         descText = `${weatherData.weather[0].description[0].toUpperCase() + weatherData.weather[0].description.slice(1).toLowerCase()}`
-        //     } else if (weatherData.weather[0].main === 'Snow') {
-        //         adjustedImg = 'Weather Images/day/snow-day.gif'
-        //         descText = `${weatherData.weather[0].description[0].toUpperCase() + weatherData.weather[0].description.slice(1).toLowerCase()}`
-        //     } else if (weatherData.weather[0].main === 'Rain') {
-        //         adjustedImg = 'Weather Images/day/rainy-day.gif'
-        //         descText = `${weatherData.weather[0].description[0].toUpperCase() + weatherData.weather[0].description.slice(1).toLowerCase()}`
-        //     }
-
-        //     if (toggleTemp === true) {
-        //         cardObj = {
-        //             city: locationData.name,
-        //             temp: fDeg,
-        //             img: adjustedImg,
-        //             desc: descText,
-        //             id: count++,
-        //             toggle: true
-        //         }
-        //     } else {
-        //         cardObj = {
-        //             city: locationData.name,
-        //             temp: cDeg,
-        //             img: adjustedImg,
-        //             desc: descText,
-        //             id: count++,
-        //             toggle: false
-        //         }
-        //     }
-        //     cardList.push(cardObj)
-        //     displayWeatherList(cardList)
     }
     } catch (error) {
         console.error(error);
@@ -227,22 +169,26 @@ async function forecast(locationInput, id, toggleForecast) {
 
 //toggle to forecast information
 cardSection.addEventListener('click', (e) => {
-
     if (e.target.classList.contains('card')) {
         if (!e.target.classList.contains('forecasting')) {
+            console.log("1")
             forecast(e.target.firstChild.innerHTML, e.target.firstChild.nextSibling.id, toggleForecast)
         } else {
+            console.log("2")
             e.target.classList.remove('forecasting')
             let id = e.target.querySelector(`span`).id
             displayWeatherList(cardList, id)
         }
-    } else if (e.target.classList.contains('forecastButton')) {
-        if (!e.target.classList.contains('forecasting')) {
-            forecast(e.target.parentElement.firstChild.innerHTML, e.target.parentElement.firstChild.nextSibling.id, toggleForecast)
-        } else {
-            e.target.classList.remove('forecasting')
-            let id = e.target.querySelector(`span`).id
-            displayWeatherList(cardList, id)
-        }
-    }
+    } 
+    // else if (e.target.classList.contains('forecastButton')) {
+    //     if (!e.target.classList.contains('forecasting')) {
+    //         console.log("3")
+    //         forecast(e.target.parentElement.firstChild.innerHTML, e.target.parentElement.firstChild.nextSibling.id, toggleForecast)
+    //     } else {
+    //         console.log("4")
+    //         e.target.classList.remove('forecasting')
+    //         let id = e.target.querySelector(`span`).id
+    //         displayWeatherList(cardList, id)
+    //     }
+    // }
 })
