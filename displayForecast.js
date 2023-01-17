@@ -5,6 +5,7 @@ import {
 var DateTime = luxon.DateTime;
 
 export function displayForecast(data, id, toggleTemp, toggleForecast) {
+    console.log("forecast")
     let cardId = document.querySelectorAll('.card span')
     let stringDate = ''
     let tempString = ''
@@ -15,6 +16,7 @@ export function displayForecast(data, id, toggleTemp, toggleForecast) {
 
     for (let i = 0; i < cardId.length; i++) {
         if (id === cardId[i].id) {
+            console.log("id")
             parent = cardId[i].parentElement
             parent.textContent = ''
 
