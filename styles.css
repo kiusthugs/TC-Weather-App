@@ -87,6 +87,8 @@ input:focus{
     margin-bottom: 25px;
     position: relative;
     cursor: pointer;
+    max-height: 525px;
+    max-width: 400px;
 }
 
 h2 {
@@ -174,6 +176,10 @@ img {
 .forecastDesc {
     font-size: 1.4rem;
     text-align: center;
+}
+
+.forecasting {
+    overflow: scroll;
 }
 
 @media screen and (min-width: 1025px) {
